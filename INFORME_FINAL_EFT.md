@@ -11,7 +11,37 @@
 
 ---
 
+## ÍNDICE
+
+I. [Plan de Pruebas Automatizadas](#i-plan-de-pruebas-automatizadas)
+   - 1. [Presentación del caso](#1-presentación-del-caso)
+   - 2. [Cronograma por Sprint](#2-evaluación-del-caso-y-planificación--cronograma-por-sprint)
+   - 3. [Casos de pruebas](#3-casos-de-pruebas)
+   - 4. [Técnicas y metodologías](#4-definición-de-técnicas-y-metodologías-de-pruebas-automatizadas)
+   - 5. [Tipos de pruebas](#5-definición-de-tipos-de-pruebas-de-automatización)
+   - 6. [Herramientas](#6-herramientas-para-casos-de-prueba-y-automatización)
+   - 7. [Guiones de automatización](#7-guiones-para-definir-la-automatización-de-casos-de-prueba)
+
+II. [Implementación del Plan de Pruebas Automatizadas](#ii-implementación-del-plan-de-pruebas-automatizadas)
+   - 1. [Matriz de trazabilidad](#1-matriz-de-trazabilidad)
+   - 2. [Codificación de escenarios](#2-codificación-de-escenarios-de-prueba)
+   - 3. [Condiciones de aceptación](#3-condiciones-de-aceptación-de-los-casos-de-prueba)
+   - 4. [Casos BDD](#4-casos-de-prueba-utilizando-el-software-de-automatización-enfoque-bdd)
+   - 5. [Plantillas con evidencia](#5-plantilla-de-escenarios-de-prueba-con-evidencia-de-resultados)
+
+III. [Análisis y Evaluación de Resultados](#iii-análisis-y-evaluación-de-los-resultados-de-las-pruebas-automatizadas)
+   - 1. [Ejecución y evidencias](#1-ejecución-de-pruebas-y-registro-de-evidencias)
+   - 2. [Evaluación de resultados](#2-evaluación-de-resultados-de-las-pruebas-para-aportar-al-ciclo-de-vida-del-software)
+   - 3. [Oportunidades de mejora](#3-análisis-e-identificación-del-origen-de-las-incidencias--oportunidades-de-mejora)
+   - 4. [Métricas](#4-generación-de-métricas-de-calidad)
+   - 5. [Propuestas de mejora](#5-propuesta-de-mejora-para-las-incidencias-y-riesgos-identificados)
+   - 6. [Conclusiones](#6-conclusiones-y-proyecciones)
+
+---
+
 ## I. PLAN DE PRUEBAS AUTOMATIZADAS
+
+*Esta sección describe la planificación completa del proceso de automatización: el caso seleccionado (OrangeHRM), la organización del trabajo en 3 sprints alineados con las evaluaciones parciales, los 16 casos de prueba diseñados con sus prioridades y tipos, las técnicas y metodologías aplicadas (BDD, Data-Driven, captura automática de evidencia), los tipos de pruebas cubiertos, las herramientas del stack tecnológico, y los guiones que definen cómo se automatiza cada caso.*
 
 ---
 
@@ -169,9 +199,46 @@ Cada caso de prueba sigue este flujo de automatización:
 3. after_scenario detecta el fallo y captura screenshot automáticamente
 ```
 
+#### Evidencia de ejecución — Estructura del proyecto
+
+La estructura completa del proyecto se muestra a continuación. Cada archivo y carpeta corresponde a los artefactos entregados (ver carpeta `AutomatizacionPruebasPython/`):
+
+```
+AutomatizacionPruebasPython/
+├── environment.py              # Hooks before/after_scenario
+├── features/                   # 10 archivos .feature (Gherkin)
+│   ├── login.feature
+│   ├── sesion_management.feature
+│   ├── pim_management.feature
+│   ├── empleados.feature
+│   ├── busqueda.feature
+│   ├── edicion.feature
+│   ├── eliminacion.feature
+│   ├── perfil.feature
+│   ├── licencias.feature
+│   └── navigation.feature
+├── steps/                      # Implementación Python de los pasos
+│   ├── orangehrm_steps.py
+│   └── data_driven_steps.py
+├── utils/                      # Utilidades
+│   ├── utility.py              # capture_screenshot()
+│   └── excel_utils.py          # Lectura Excel (Data-Driven)
+├── testData/                   # Datos de prueba (Excel)
+├── evidencias/                 # 177 screenshots de evidencia
+│   └── screenshot_*.png
+├── reporte.html                # Reporte visual 28 PASS / 1 FAIL
+├── reporte.json                # Reporte estructurado con métricas
+├── requirements.txt            # Dependencias del proyecto
+├── generar_reporte.py          # Generador de reportes
+├── generar_excel.py            # Generador de datos Excel
+└── README.md                   # Documentación del proyecto
+```
+
 ---
 
 ## II. IMPLEMENTACIÓN DEL PLAN DE PRUEBAS AUTOMATIZADAS
+
+*Esta sección documenta la ejecución del plan: la matriz de trazabilidad que conecta cada requisito con su escenario y resultado, la codificación Gherkin de los 29 escenarios en 10 archivos feature, las condiciones de aceptación (Given/When/Then) de cada caso, la configuración del framework Behave con environment.py, y las plantillas detalladas de cada escenario con su evidencia visual.*
 
 ---
 
@@ -242,6 +309,25 @@ def step_login_success(context):
     context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     context.wait.until(EC.url_contains("dashboard"))
 ```
+
+#### Evidencia de ejecución — Resultados de pruebas
+
+La ejecución de los 29 escenarios generó los siguientes artefactos verificables:
+
+| Artefacto | Ruta | Descripción |
+|-----------|------|-------------|
+| Reporte visual | [`reporte.html`](reporte.html) | Tabla por feature con resultados PASS/FAIL |
+| Reporte JSON | [`reporte.json`](reporte.json) | Estructura completa: 10 features, 29 escenarios, duraciones |
+| Screenshots | `evidencias/screenshot_*.png` (177 archivos) | Capturas automáticas con timestamp |
+
+**Resumen de ejecución (desde `reporte.json`):**
+- **Total escenarios:** 29
+- **PASS:** 28 (96.55%)
+- **FAIL:** 1 (TC_004 — fallo intencional)
+- **Duración total:** ~4 min 42 seg
+- **Tiempo promedio por escenario:** ~9.7 seg
+
+> **Para visualizar los resultados:** Abrir `reporte.html` en cualquier navegador. Allí se muestra el resumen final ("28 passed, 1 failed") y la tabla detallada con el TC_004 marcado en rojo.
 
 ---
 
@@ -366,6 +452,8 @@ A continuación se presentan los 29 escenarios ejecutados, cada uno con su resul
 
 ## III. ANÁLISIS Y EVALUACIÓN DE LOS RESULTADOS DE LAS PRUEBAS AUTOMATIZADAS
 
+*Esta sección presenta los resultados obtenidos tras la ejecución de los 29 escenarios: el registro de evidencias (177 screenshots, reportes JSON/HTML), la evaluación por módulo con análisis de cada resultado, las 5 oportunidades de mejora identificadas con estructura A+B+C, las métricas de calidad (PPT 3.3.1) y rendimiento, las 6 propuestas formales de mejora con impacto cuantificable, y las conclusiones generales e individuales del proceso.*
+
 ---
 
 ### 1. Ejecución de pruebas y registro de evidencias
@@ -415,6 +503,41 @@ A continuación se presentan los 29 escenarios ejecutados, cada uno con su resul
 - **177 screenshots** en `evidencias/` con formato `screenshot_AAAAMMDD_HHMMSS.png`
 - **Reporte HTML** (`reporte.html`) con tabla de resultados por feature y resumen final
 - **Reporte JSON** (`reporte.json`) con estructura completa: 10 features, 29 escenarios, duraciones
+
+#### Evidencia de ejecución — Reporte de resultados
+
+Los reportes generados contienen toda la información de la ejecución:
+
+**`reporte.html`** (abrir en navegador):
+- Resumen final: **28 PASS / 1 FAIL / 29 total**
+- Tabla por feature con color coding (verde = PASS, rojo = FAIL)
+- TC_004 visible en rojo en la tabla de `login.feature`
+- Tablas Data-Driven con 3 filas cada una (PASS)
+
+**`reporte.json`** (estructura completa):
+```json
+{
+  "total_scenarios": 29,
+  "passed": 28,
+  "failed": 1,
+  "duration_seconds": 282.5,
+  "features": [
+    {
+      "name": "login",
+      "scenarios": [
+        {"name": "Login exitoso", "status": "passed", "duration": 12.3},
+        {"name": "Login inválido", "status": "passed", "duration": 10.1},
+        {"name": "Logout exitoso", "status": "passed", "duration": 8.7},
+        {"name": "Assert falla título", "status": "failed", "duration": 9.2}
+      ]
+    }
+  ]
+}
+```
+
+**177 screenshots** en `evidencias/` con formato `screenshot_AAAAMMDD_HHMMSS.png` — cada escenario genera múltiples capturas cronológicas, y el hook `@after_scenario` captura automáticamente el estado del navegador en caso de fallo (TC_004).
+
+> **Nota para la presentación:** Los archivos `reporte.html`, `reporte.json` y la carpeta `evidencias/` están disponibles en la raíz del proyecto para su revisión directa en cualquier navegador o editor de texto.
 
 ---
 

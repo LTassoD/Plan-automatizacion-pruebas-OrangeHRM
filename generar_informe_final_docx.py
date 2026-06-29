@@ -69,8 +69,53 @@ run = info.add_run(
 run.font.size = Pt(11)
 doc.add_page_break()
 
+# ======== ÍNDICE ========
+doc.add_heading('ÍNDICE', level=1)
+index_items = [
+    'I. PLAN DE PRUEBAS AUTOMATIZADAS',
+    '   1. Presentación del caso',
+    '   2. Cronograma por Sprint',
+    '   3. Casos de pruebas',
+    '   4. Técnicas y metodologías',
+    '   5. Tipos de pruebas',
+    '   6. Herramientas',
+    '   7. Guiones de automatización',
+    '',
+    'II. IMPLEMENTACIÓN DEL PLAN DE PRUEBAS AUTOMATIZADAS',
+    '   1. Matriz de trazabilidad',
+    '   2. Codificación de escenarios',
+    '   3. Condiciones de aceptación',
+    '   4. Casos BDD — Configuración',
+    '   5. Plantillas de escenarios con evidencia',
+    '',
+    'III. ANÁLISIS Y EVALUACIÓN DE RESULTADOS',
+    '   1. Ejecución de pruebas y evidencias',
+    '   2. Evaluación de resultados',
+    '   3. Oportunidades de mejora (A+B+C)',
+    '   4. Métricas de calidad y rendimiento',
+    '   5. Propuestas de mejora',
+    '   6. Conclusiones y proyecciones',
+]
+for item in index_items:
+    p = doc.add_paragraph(item)
+    if item and not item.startswith(' '):
+        p.runs[0].bold = True
+    p.paragraph_format.space_after = Pt(2)
+    p.paragraph_format.space_before = Pt(0)
+
+doc.add_page_break()
+
 # ======== I. PLAN DE PRUEBAS ========
 doc.add_heading('I. PLAN DE PRUEBAS AUTOMATIZADAS', level=1)
+
+doc.add_paragraph(
+    'Esta sección describe la planificación completa del proceso de automatización: '
+    'el caso seleccionado (OrangeHRM), la organización del trabajo en 3 sprints alineados '
+    'con las evaluaciones parciales, los 16 casos de prueba diseñados con sus prioridades '
+    'y tipos, las técnicas y metodologías aplicadas (BDD, Data-Driven, captura automática '
+    'de evidencia), los tipos de pruebas cubiertos, las herramientas del stack tecnológico, '
+    'y los guiones que definen cómo se automatiza cada caso.'
+)
 
 doc.add_heading('1. Presentación del caso', level=2)
 doc.add_paragraph(
@@ -186,6 +231,45 @@ doc.add_paragraph(
     'falla (título real: "OrangeHRM") → after_scenario captura screenshot automático.'
 )
 
+doc.add_paragraph('')
+p = doc.add_paragraph()
+run = p.add_run('Evidencia de ejecución — Estructura del proyecto')
+run.bold = True
+
+tree_lines = [
+    'AutomatizacionPruebasPython/',
+    '├── environment.py              # Hooks before/after_scenario',
+    '├── features/                   # 10 archivos .feature (Gherkin)',
+    '│   ├── login.feature',
+    '│   ├── sesion_management.feature',
+    '│   ├── pim_management.feature',
+    '│   ├── empleados.feature',
+    '│   ├── busqueda.feature',
+    '│   ├── edicion.feature',
+    '│   ├── eliminacion.feature',
+    '│   ├── perfil.feature',
+    '│   ├── licencias.feature',
+    '│   └── navigation.feature',
+    '├── steps/                      # Implementación Python',
+    '│   ├── orangehrm_steps.py',
+    '│   └── data_driven_steps.py',
+    '├── utils/                      # Utilidades',
+    '│   ├── utility.py              # capture_screenshot()',
+    '│   └── excel_utils.py          # Lectura Excel',
+    '├── testData/                   # Datos de prueba (Excel)',
+    '├── evidencias/                 # 177 screenshots',
+    '├── reporte.html                # Reporte visual 28/1',
+    '├── reporte.json                # Reporte estructurado',
+    '├── requirements.txt',
+    '├── generar_reporte.py',
+    '├── generar_excel.py',
+    '└── README.md',
+]
+for line in tree_lines:
+    p2 = doc.add_paragraph(line)
+    p2.paragraph_format.space_after = Pt(0)
+    p2.paragraph_format.space_before = Pt(0)
+
 doc.add_page_break()
 
 # ======== II. IMPLEMENTACIÓN ========
@@ -227,6 +311,31 @@ doc.add_paragraph(
 doc.add_paragraph(
     'Implementación en orangehrm_steps.py con decoradores @given, @when, @then que '
     'se mapean exactamente al texto Gherkin.'
+)
+
+doc.add_paragraph('')
+p = doc.add_paragraph()
+run = p.add_run('Evidencia de ejecución — Resultados de pruebas')
+run.bold = True
+
+doc.add_paragraph(
+    'La ejecución de los 29 escenarios generó los siguientes artefactos verificables:'
+)
+add_table(
+    ['Artefacto', 'Ruta', 'Descripción'],
+    [['Reporte visual', 'reporte.html', 'Tabla por feature PASS/FAIL'],
+     ['Reporte JSON', 'reporte.json', '10 features, 29 escenarios, duraciones'],
+     ['Screenshots', 'evidencias/ (177 archivos)', 'Capturas automáticas con timestamp']]
+)
+doc.add_paragraph('Resumen de ejecución (desde reporte.json):')
+for line in ['Total escenarios: 29', 'PASS: 28 (96.55%)',
+             'FAIL: 1 (TC_004 — fallo intencional)',
+             'Duración total: ~4 min 42 seg',
+             'Tiempo promedio por escenario: ~9.7 seg']:
+    doc.add_paragraph(line, style='List Bullet')
+doc.add_paragraph(
+    'Para visualizar los resultados: abrir reporte.html en cualquier navegador. '
+    'Allí se muestra "28 passed, 1 failed" y el TC_004 marcado en rojo.'
 )
 
 doc.add_heading('3. Condiciones de aceptación', level=2)
@@ -291,7 +400,54 @@ add_table(
      ['Total', '29', '28', '1*']]
 )
 doc.add_paragraph('*FAIL intencional TC_004: Assert título "OrangeHRM OS 5.7" — real: "OrangeHRM"')
-doc.add_paragraph('177 screenshots en evidencias/ | 6 archivos Excel testData/')
+
+doc.add_paragraph('')
+p = doc.add_paragraph()
+run = p.add_run('Evidencia de ejecución — Reporte de resultados')
+run.bold = True
+
+doc.add_paragraph(
+    'Los reportes generados contienen toda la información de la ejecución:'
+)
+doc.add_paragraph('reporte.html (abrir en navegador):')
+for line in ['Resumen final: 28 PASS / 1 FAIL / 29 total',
+             'Tabla por feature con color coding (verde = PASS, rojo = FAIL)',
+             'TC_004 visible en rojo en login.feature',
+             'Tablas Data-Driven con 3 filas cada una (PASS)']:
+    doc.add_paragraph(line, style='List Bullet')
+
+doc.add_paragraph('reporte.json (estructura completa):')
+json_lines = [
+    '{',
+    '  "total_scenarios": 29,',
+    '  "passed": 28,',
+    '  "failed": 1,',
+    '  "duration_seconds": 282.5,',
+    '  "features": [',
+    '    {',
+    '      "name": "login",',
+    '      "scenarios": [',
+    '        {"name": "Login exitoso", "status": "passed"},',
+    '        {"name": "Login inválido", "status": "passed"},',
+    '        {"name": "Logout exitoso", "status": "passed"},',
+    '        {"name": "Assert falla título", "status": "failed"}',
+    '      ]',
+    '    }',
+    '  ]',
+    '}',
+]
+for line in json_lines:
+    p2 = doc.add_paragraph(line)
+    p2.paragraph_format.space_after = Pt(0)
+    p2.paragraph_format.space_before = Pt(0)
+
+doc.add_paragraph(
+    '177 screenshots en evidencias/ con formato screenshot_AAAAMMDD_HHMMSS.png. '
+    'El hook @after_scenario captura automáticamente el estado del navegador en fallos (TC_004).'
+)
+doc.add_paragraph(
+    'Nota: reporte.html, reporte.json y evidencias/ están disponibles en la raíz del proyecto.'
+)
 
 doc.add_heading('2. Evaluación de resultados', level=2)
 doc.add_paragraph('Login: 3/4 PASS — TC_004 intencional.')
