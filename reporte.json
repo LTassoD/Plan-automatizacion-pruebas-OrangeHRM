@@ -1,0 +1,1008 @@
+[
+  {
+    "name": "Login y Validaci\u00f3n de Acceso Orange HRM",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "1. Login exitoso + screenshot",
+        "tags": [
+          {
+            "name": "@Caso1"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1500000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "2. Login con credenciales inv\u00e1lidas + screenshot",
+        "tags": [
+          {
+            "name": "@Caso2"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "4. Assert falla en verificaci\u00f3n de t\u00edtulo",
+        "tags": [
+          {
+            "name": "@Caso4"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1500000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 500000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "10. Validar campos obligatorios en login",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gesti\u00f3n de Sesi\u00f3n (Logout)",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "3. Logout exitoso + screenshot",
+        "tags": [
+          {
+            "name": "@Caso3"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Navegaci\u00f3n de M\u00f3dulos Principales",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "7. Navegar a la secci\u00f3n Leave",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "8. Navegar a la secci\u00f3n Admin",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "9. Verificar men\u00fa My Info",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gesti\u00f3n de Empleados (PIM)",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "Navegar a la secci\u00f3n PIM",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "Agregar nuevo empleado en PIM",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "Buscar empleado existente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Registro de empleados Data-Driven",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "@5.1",
+        "tags": [
+          {
+            "name": "@@Caso5"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@5.2",
+        "tags": [
+          {
+            "name": "@@Caso5"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@5.3",
+        "tags": [
+          {
+            "name": "@@Caso5"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "B\u00fasqueda de empleados con filtros",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "@6.1",
+        "tags": [
+          {
+            "name": "@@Caso6"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@6.2",
+        "tags": [
+          {
+            "name": "@@Caso6"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@6.3",
+        "tags": [
+          {
+            "name": "@@Caso6"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Edici\u00f3n de empleados",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "@7.1",
+        "tags": [
+          {
+            "name": "@@Caso7"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@7.2",
+        "tags": [
+          {
+            "name": "@@Caso7"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@7.3",
+        "tags": [
+          {
+            "name": "@@Caso7"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eliminaci\u00f3n de empleados",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "@8.1",
+        "tags": [
+          {
+            "name": "@@Caso8"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@8.2",
+        "tags": [
+          {
+            "name": "@@Caso8"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@8.3",
+        "tags": [
+          {
+            "name": "@@Caso8"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Actualizaci\u00f3n de perfil My Info",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "@13.1",
+        "tags": [
+          {
+            "name": "@@Caso13"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@13.2",
+        "tags": [
+          {
+            "name": "@@Caso13"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@13.3",
+        "tags": [
+          {
+            "name": "@@Caso13"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Solicitud de licencias",
+    "elements": [
+      {
+        "type": "scenario",
+        "name": "@14.1",
+        "tags": [
+          {
+            "name": "@@Caso14"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@14.2",
+        "tags": [
+          {
+            "name": "@@Caso14"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "name": "@14.3",
+        "tags": [
+          {
+            "name": "@@Caso14"
+          }
+        ],
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2000000000
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

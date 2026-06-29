@@ -1,0 +1,33 @@
+<html><head><meta charset="UTF-8">
+<title>Reporte de Pruebas - OrangeHRM</title>
+<style>
+body{font-family:Arial,sans-serif;margin:40px;background:#f5f5f5}
+h1{color:#2c3e50;border-bottom:3px solid #4CAF50;padding-bottom:10px}
+h2{color:#34495e;margin-top:30px}
+table{border-collapse:collapse;width:100%;margin-bottom:20px;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+th,td{border:1px solid #ddd;padding:12px;text-align:left}
+th{background:#4CAF50;color:white;font-weight:bold}
+tr:nth-child(even){background:#f9f9f9}
+.passed{color:#4CAF50;font-weight:bold}
+.failed{color:#f44336;font-weight:bold}
+.resumen{background:#fff;padding:20px;border-radius:5px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.resumen span{font-size:18px;margin-right:20px}
+.verde{color:#4CAF50;font-weight:bold}
+.rojo{color:#f44336;font-weight:bold}
+.footer{color:#999;margin-top:30px;font-size:12px}
+</style></head><body>
+<h1>Reporte de Automatización - OrangeHRM</h1>
+<p><strong>Herramienta:</strong> Behave + Selenium WebDriver</p>
+<p><strong>Sitio:</strong> opensource-demo.orangehrmlive.com</p>
+<p><strong>Fecha de ejecución:</strong> 2026-06-08 21:21</p>
+<h2>Login y Validación de Acceso Orange HRM</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>1. Login exitoso + screenshot</td><td class="passed">PASÓ</td><td>4300000000</td></tr><tr><td>2</td><td>2. Login con credenciales inválidas + screenshot</td><td class="passed">PASÓ</td><td>2500000000</td></tr><tr><td>3</td><td>4. Assert falla en verificación de título</td><td class="failed">FALLÓ</td><td>2300000000</td></tr><tr><td>4</td><td>10. Validar campos obligatorios en login</td><td class="passed">PASÓ</td><td>1800000000</td></tr></table><h2>Gestión de Sesión (Logout)</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>3. Logout exitoso + screenshot</td><td class="passed">PASÓ</td><td>6700000000</td></tr></table><h2>Navegación de Módulos Principales</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>7. Navegar a la sección Leave</td><td class="passed">PASÓ</td><td>6000000000</td></tr><tr><td>2</td><td>8. Navegar a la sección Admin</td><td class="passed">PASÓ</td><td>6000000000</td></tr><tr><td>3</td><td>9. Verificar menú My Info</td><td class="passed">PASÓ</td><td>6000000000</td></tr></table><h2>Gestión de Empleados (PIM)</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>Navegar a la sección PIM</td><td class="passed">PASÓ</td><td>6000000000</td></tr><tr><td>2</td><td>Agregar nuevo empleado en PIM</td><td class="passed">PASÓ</td><td>14000000000</td></tr><tr><td>3</td><td>Buscar empleado existente</td><td class="passed">PASÓ</td><td>10000000000</td></tr></table><h2>Registro de empleados Data-Driven</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>@5.1</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>2</td><td>@5.2</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>3</td><td>@5.3</td><td class="passed">PASÓ</td><td>10200000000</td></tr></table><h2>Búsqueda de empleados con filtros</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>@6.1</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>2</td><td>@6.2</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>3</td><td>@6.3</td><td class="passed">PASÓ</td><td>10200000000</td></tr></table><h2>Edición de empleados</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>@7.1</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>2</td><td>@7.2</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>3</td><td>@7.3</td><td class="passed">PASÓ</td><td>10200000000</td></tr></table><h2>Eliminación de empleados</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>@8.1</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>2</td><td>@8.2</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>3</td><td>@8.3</td><td class="passed">PASÓ</td><td>10200000000</td></tr></table><h2>Actualización de perfil My Info</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>@13.1</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>2</td><td>@13.2</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>3</td><td>@13.3</td><td class="passed">PASÓ</td><td>10200000000</td></tr></table><h2>Solicitud de licencias</h2><table><tr><th>N°</th><th>Escenario</th><th>Estado</th><th>Duración (s)</th></tr><tr><td>1</td><td>@14.1</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>2</td><td>@14.2</td><td class="passed">PASÓ</td><td>10200000000</td></tr><tr><td>3</td><td>@14.3</td><td class="passed">PASÓ</td><td>10200000000</td></tr></table>
+<div class="resumen">
+<h3>Resumen Final</h3>
+<p><span class="verde">&#10003; Aprobados: 28</span>
+<span class="rojo">&#10007; Fallidos: 1</span>
+<span><strong>Total:</strong> 29 escenarios</span></p>
+</div>
+<div class="footer">
+<p>Generado automáticamente por Behave + Selenium | Evaluación Parcial 2 - Automatización de Pruebas</p>
+</div>
+</body></html>
