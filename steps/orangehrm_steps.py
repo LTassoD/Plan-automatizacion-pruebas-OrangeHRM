@@ -74,7 +74,7 @@ def step_click_login(context):
     context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
 
 
-@when(u'deja los campos de usuario y contraseña vacios')
+@when(u'deja los campos de usuario y contraseña vacíos')
 def step_clear_fields(context):
     """Limpia ambos campos del formulario de login para probar validacion.
     """
