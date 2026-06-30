@@ -13,29 +13,31 @@
 
 ## ÍNDICE
 
-I. [Plan de Pruebas Automatizadas](#i-plan-de-pruebas-automatizadas)
-   - 1. [Presentación del caso](#1-presentación-del-caso)
-   - 2. [Cronograma por Sprint](#2-evaluación-del-caso-y-planificación--cronograma-por-sprint)
-   - 3. [Casos de pruebas](#3-casos-de-pruebas)
-   - 4. [Técnicas y metodologías](#4-definición-de-técnicas-y-metodologías-de-pruebas-automatizadas)
-   - 5. [Tipos de pruebas](#5-definición-de-tipos-de-pruebas-de-automatización)
-   - 6. [Herramientas](#6-herramientas-para-casos-de-prueba-y-automatización)
-   - 7. [Guiones de automatización](#7-guiones-para-definir-la-automatización-de-casos-de-prueba)
+> El índice se genera automáticamente desde los encabezados del documento. Para actualizarlo, ejecutar: `python generar_toc.py`
 
-II. [Implementación del Plan de Pruebas Automatizadas](#ii-implementación-del-plan-de-pruebas-automatizadas)
-   - 1. [Matriz de trazabilidad](#1-matriz-de-trazabilidad)
-   - 2. [Codificación de escenarios](#2-codificación-de-escenarios-de-prueba)
-   - 3. [Condiciones de aceptación](#3-condiciones-de-aceptación-de-los-casos-de-prueba)
-   - 4. [Casos BDD](#4-casos-de-prueba-utilizando-el-software-de-automatización-enfoque-bdd)
-   - 5. [Plantillas con evidencia](#5-plantilla-de-escenarios-de-prueba-con-evidencia-de-resultados)
-
-III. [Análisis y Evaluación de Resultados](#iii-análisis-y-evaluación-de-los-resultados-de-las-pruebas-automatizadas)
-   - 1. [Ejecución y evidencias](#1-ejecución-de-pruebas-y-registro-de-evidencias)
-   - 2. [Evaluación de resultados](#2-evaluación-de-resultados-de-las-pruebas-para-aportar-al-ciclo-de-vida-del-software)
-   - 3. [Oportunidades de mejora](#3-análisis-e-identificación-del-origen-de-las-incidencias--oportunidades-de-mejora)
-   - 4. [Métricas](#4-generación-de-métricas-de-calidad)
-   - 5. [Propuestas de mejora](#5-propuesta-de-mejora-para-las-incidencias-y-riesgos-identificados)
-   - 6. [Conclusiones](#6-conclusiones-y-proyecciones)
+<!-- TOC_START -->
+I. [I. PLAN DE PRUEBAS AUTOMATIZADAS](#i-plan-de-pruebas-automatizadas)
+    - [1. Presentación del caso](#1-presentación-del-caso)
+    - [2. Evaluación del caso y planificación — Cronograma por Sprint](#2-evaluación-del-caso-y-planificación-cronograma-por-sprint)
+    - [3. Casos de pruebas](#3-casos-de-pruebas)
+    - [4. Definición de técnicas y metodologías de pruebas automatizadas](#4-definición-de-técnicas-y-metodologías-de-pruebas-automatizadas)
+    - [5. Definición de tipos de pruebas de automatización](#5-definición-de-tipos-de-pruebas-de-automatización)
+    - [6. Herramientas para casos de prueba y automatización](#6-herramientas-para-casos-de-prueba-y-automatización)
+    - [7. Guiones para definir la automatización de casos de prueba](#7-guiones-para-definir-la-automatización-de-casos-de-prueba)
+II. [II. IMPLEMENTACIÓN DEL PLAN DE PRUEBAS AUTOMATIZADAS](#ii-implementación-del-plan-de-pruebas-automatizadas)
+    - [1. Matriz de trazabilidad](#1-matriz-de-trazabilidad)
+    - [2. Codificación de escenarios de prueba](#2-codificación-de-escenarios-de-prueba)
+    - [3. Condiciones de aceptación de los casos de prueba](#3-condiciones-de-aceptación-de-los-casos-de-prueba)
+    - [4. Casos de prueba utilizando el software de automatización (Enfoque BDD)](#4-casos-de-prueba-utilizando-el-software-de-automatización-enfoque-bdd)
+    - [5. Plantilla de escenarios de prueba con evidencia de resultados](#5-plantilla-de-escenarios-de-prueba-con-evidencia-de-resultados)
+III. [III. ANÁLISIS Y EVALUACIÓN DE LOS RESULTADOS DE LAS PRUEBAS AUTOMATIZADAS](#iii-análisis-y-evaluación-de-los-resultados-de-las-pruebas-automatizadas)
+    - [1. Ejecución de pruebas y registro de evidencias](#1-ejecución-de-pruebas-y-registro-de-evidencias)
+    - [2. Evaluación de resultados de las pruebas, para aportar al ciclo de vida del software](#2-evaluación-de-resultados-de-las-pruebas-para-aportar-al-ciclo-de-vida-del-software)
+    - [3. Análisis e identificación del origen de las incidencias — Oportunidades de mejora](#3-análisis-e-identificación-del-origen-de-las-incidencias-oportunidades-de-mejora)
+    - [4. Generación de métricas de calidad](#4-generación-de-métricas-de-calidad)
+    - [5. Propuesta de mejora para las incidencias y riesgos identificados](#5-propuesta-de-mejora-para-las-incidencias-y-riesgos-identificados)
+    - [6. Conclusiones y proyecciones](#6-conclusiones-y-proyecciones)
+<!-- TOC_END -->
 
 ---
 
@@ -234,6 +236,9 @@ AutomatizacionPruebasPython/
 └── README.md                   # Documentación del proyecto
 ```
 
+> 📸 **CAPTURA 1 — Proyecto en PyCharm:** Abrir PyCharm → `File > Open` y seleccionar la carpeta `AutomatizacionPruebasPython`. Capturar pantalla del **Project Explorer** expandido mostrando la estructura completa (features/, steps/, utils/, evidencias/). Insertar imagen aquí.
+```
+
 ---
 
 ## II. IMPLEMENTACIÓN DEL PLAN DE PRUEBAS AUTOMATIZADAS
@@ -328,6 +333,8 @@ La ejecución de los 29 escenarios generó los siguientes artefactos verificable
 - **Tiempo promedio por escenario:** ~9.7 seg
 
 > **Para visualizar los resultados:** Abrir `reporte.html` en cualquier navegador. Allí se muestra el resumen final ("28 passed, 1 failed") y la tabla detallada con el TC_004 marcado en rojo.
+
+> 📸 **CAPTURA 2 — Tests en ejecución:** En PyCharm, abrir `features/login.feature` y hacer clic en el botón ▶ (Run). Capturar la **ventana Run** mostrando los escenarios ejecutándose en vivo (barras verdes PASS y una roja FAIL para TC_004). Insertar imagen aquí.
 
 ---
 
@@ -537,7 +544,7 @@ Los reportes generados contienen toda la información de la ejecución:
 
 **177 screenshots** en `evidencias/` con formato `screenshot_AAAAMMDD_HHMMSS.png` — cada escenario genera múltiples capturas cronológicas, y el hook `@after_scenario` captura automáticamente el estado del navegador en caso de fallo (TC_004).
 
-> **Nota para la presentación:** Los archivos `reporte.html`, `reporte.json` y la carpeta `evidencias/` están disponibles en la raíz del proyecto para su revisión directa en cualquier navegador o editor de texto.
+> 📸 **CAPTURA 3 — Reporte en navegador:** Abrir `reporte.html` en Chrome. Capturar pantalla del resumen final ("28 passed, 1 failed, 29 total") y la tabla de `login.feature` con TC_004 en rojo. Insertar imagen aquí.
 
 ---
 

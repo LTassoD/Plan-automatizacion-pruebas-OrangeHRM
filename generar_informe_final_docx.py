@@ -71,6 +71,10 @@ doc.add_page_break()
 
 # ======== ÍNDICE ========
 doc.add_heading('ÍNDICE', level=1)
+doc.add_paragraph(
+    'Nota: En Microsoft Word, actualizar este índice con clic derecho > "Actualizar campo". '
+    'Para regenerarlo automáticamente: Insert > Index and Tables > Table of Contents.'
+)
 index_items = [
     'I. PLAN DE PRUEBAS AUTOMATIZADAS',
     '   1. Presentación del caso',
@@ -270,6 +274,15 @@ for line in tree_lines:
     p2.paragraph_format.space_after = Pt(0)
     p2.paragraph_format.space_before = Pt(0)
 
+p = doc.add_paragraph()
+run = p.add_run('📸 CAPTURA 1 — Proyecto en PyCharm: ')
+run.bold = True
+p.add_run(
+    'Abrir PyCharm → File > Open y seleccionar la carpeta AutomatizacionPruebasPython. '
+    'Capturar pantalla del Project Explorer expandido (features/, steps/, utils/, evidencias/). '
+    'Insertar imagen a continuación.'
+)
+
 doc.add_page_break()
 
 # ======== II. IMPLEMENTACIÓN ========
@@ -336,6 +349,15 @@ for line in ['Total escenarios: 29', 'PASS: 28 (96.55%)',
 doc.add_paragraph(
     'Para visualizar los resultados: abrir reporte.html en cualquier navegador. '
     'Allí se muestra "28 passed, 1 failed" y el TC_004 marcado en rojo.'
+)
+
+p = doc.add_paragraph()
+run = p.add_run('📸 CAPTURA 2 — Tests en ejecución: ')
+run.bold = True
+p.add_run(
+    'En PyCharm, abrir features/login.feature y hacer clic en ▶ (Run). '
+    'Capturar la ventana Run con escenarios en vivo (barras verdes PASS y una roja FAIL). '
+    'Insertar imagen a continuación.'
 )
 
 doc.add_heading('3. Condiciones de aceptación', level=2)
@@ -447,6 +469,15 @@ doc.add_paragraph(
 )
 doc.add_paragraph(
     'Nota: reporte.html, reporte.json y evidencias/ están disponibles en la raíz del proyecto.'
+)
+
+p = doc.add_paragraph()
+run = p.add_run('📸 CAPTURA 3 — Reporte en navegador: ')
+run.bold = True
+p.add_run(
+    'Abrir reporte.html en Chrome. Capturar pantalla del resumen final '
+    '("28 passed, 1 failed, 29 total") y la tabla de login.feature con TC_004 en rojo. '
+    'Insertar imagen a continuación.'
 )
 
 doc.add_heading('2. Evaluación de resultados', level=2)
