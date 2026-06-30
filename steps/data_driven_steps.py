@@ -58,14 +58,20 @@ def step_nav_pim_add(context):
     """Navega a PIM y hace clic en la pestana Add Employee.
     """
     _click_menu(context, "PIM")
-    time.sleep(1)
+    time.sleep(2)
     _wait_spinner_done(context)
-    tabs = context.driver.find_elements(By.CSS_SELECTOR, "a.oxd-topbar-body-nav-tab-item")
-    for tab in tabs:
-        if "Add Employee" in tab.text:
-            tab.click()
-            break
-    time.sleep(1)
+    try:
+        context.wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//a[contains(normalize-space(), 'Add Employee')]")
+        )).click()
+    except Exception:
+        tabs = context.driver.find_elements(By.CSS_SELECTOR, "a.oxd-topbar-body-nav-tab-item")
+        for tab in tabs:
+            if "Add" in tab.text:
+                tab.click()
+                break
+    time.sleep(2)
+    _wait_spinner_done(context)
     context.wait.until(EC.presence_of_element_located((By.NAME, "firstName")))
 
 
