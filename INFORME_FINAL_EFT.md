@@ -579,6 +579,8 @@ Los reportes generados contienen toda la información de la ejecución:
 
 ---
 
+> 📸 **CAPTURA 4 — Evidencias en carpeta:** Abrir la carpeta `evidencias/` en el explorador de archivos con vista "Detalles". Capturar pantalla mostrando los 93 archivos PNG ordenados por fecha, con el más reciente resaltado. Insertar imagen aquí.
+
 ### 3. Análisis e identificación del origen de las incidencias — Oportunidades de mejora
 
 #### Oportunidad 1: Internacionalización del menú lateral

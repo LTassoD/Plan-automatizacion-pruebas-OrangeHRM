@@ -490,6 +490,16 @@ doc.add_paragraph(
     '(Gherkin), base para CI/CD, cobertura Data-Driven expandible.'
 )
 
+p = doc.add_paragraph()
+run = p.add_run('📸 CAPTURA 4 — Evidencias en carpeta: ')
+run.bold = True
+run.font.size = Pt(11)
+p.add_run(
+    'Abrir la carpeta evidencias/ en el explorador con vista "Detalles". '
+    'Capturar pantalla mostrando los 93 archivos PNG ordenados por fecha. '
+    'Insertar imagen a continuación.'
+)
+
 doc.add_heading('3. Oportunidades de mejora (A+B+C)', level=2)
 for title, obs, cause, action in [
     ('O1: Menú en chino',
