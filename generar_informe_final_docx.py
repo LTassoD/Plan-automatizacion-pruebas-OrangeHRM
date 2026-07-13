@@ -261,7 +261,7 @@ tree_lines = [
     '│   ├── utility.py              # capture_screenshot()',
     '│   └── excel_utils.py          # Lectura Excel',
     '├── testData/                   # Datos de prueba (Excel)',
-    '├── evidencias/                 # 177 screenshots',
+    '├── evidencias/                 # 93 screenshots',
     '├── reporte.html                # Reporte visual 28/1',
     '├── reporte.json                # Reporte estructurado',
     '├── requirements.txt',
@@ -338,7 +338,7 @@ add_table(
     ['Artefacto', 'Ruta', 'Descripción'],
     [['Reporte visual', 'reporte.html', 'Tabla por feature PASS/FAIL'],
      ['Reporte JSON', 'reporte.json', '10 features, 29 escenarios, duraciones'],
-     ['Screenshots', 'evidencias/ (177 archivos)', 'Capturas automáticas con timestamp']]
+     ['Screenshots', 'evidencias/ (93 archivos)', 'Capturas automáticas con timestamp']]
 )
 doc.add_paragraph('Resumen de ejecución (desde reporte.json):')
 for line in ['Total escenarios: 29', 'PASS: 28 (96.55%)',
@@ -464,7 +464,7 @@ for line in json_lines:
     p2.paragraph_format.space_before = Pt(0)
 
 doc.add_paragraph(
-    '177 screenshots en evidencias/ con formato screenshot_AAAAMMDD_HHMMSS.png. '
+    '93 screenshots en evidencias/ con formato screenshot_AAAAMMDD_HHMMSS.png. '
     'El hook @after_scenario captura automáticamente el estado del navegador en fallos (TC_004).'
 )
 doc.add_paragraph(
@@ -536,7 +536,7 @@ add_table(
      ['Feature más lenta', '~40s (PIM)', 'reporte.json'],
      ['Overhead setup', '~25%', 'environment.py'],
      ['Cobertura DD', '62% (18/29)', 'Features'],
-     ['Screenshots/esc', '6.1 (177/29)', 'evidencias/']]
+     ['Screenshots/esc', '3.2 (93/29)', 'evidencias/']]
 )
 
 doc.add_heading('5. Propuestas de mejora', level=2)
@@ -580,7 +580,7 @@ doc.add_paragraph('Conclusiones:')
 for c in ['29/29 escenarios ejecutados, 96.55% aprobación',
           'Suite bilingüe: inglés + chino',
           'Data-Driven: 18 escenarios parametrizados (62%)',
-          '177 screenshots de evidencia, captura automática en fallos',
+          '93 screenshots de evidencia, captura automática en fallos',
           'Métricas trazables desde reporte.json y reporte.html',
           '5 oportunidades documentadas, 6 propuestas formales']:
     doc.add_paragraph(c, style='List Bullet')

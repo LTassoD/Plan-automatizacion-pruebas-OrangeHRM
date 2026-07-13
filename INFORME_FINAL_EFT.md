@@ -226,7 +226,7 @@ AutomatizacionPruebasPython/
 │   ├── utility.py              # capture_screenshot()
 │   └── excel_utils.py          # Lectura Excel (Data-Driven)
 ├── testData/                   # Datos de prueba (Excel)
-├── evidencias/                 # 177 screenshots de evidencia
+├── evidencias/                 # 93 screenshots de evidencia
 │   └── screenshot_*.png
 ├── reporte.html                # Reporte visual 28 PASS / 1 FAIL
 ├── reporte.json                # Reporte estructurado con métricas
@@ -323,7 +323,7 @@ La ejecución de los 29 escenarios generó los siguientes artefactos verificable
 |-----------|------|-------------|
 | Reporte visual | [`reporte.html`](reporte.html) | Tabla por feature con resultados PASS/FAIL |
 | Reporte JSON | [`reporte.json`](reporte.json) | Estructura completa: 10 features, 29 escenarios, duraciones |
-| Screenshots | `evidencias/screenshot_*.png` (177 archivos) | Capturas automáticas con timestamp |
+| Screenshots | `evidencias/screenshot_*.png` (93 archivos) | Capturas automáticas con timestamp |
 
 **Resumen de ejecución (desde `reporte.json`):**
 - **Total escenarios:** 29
@@ -459,7 +459,7 @@ A continuación se presentan los 29 escenarios ejecutados, cada uno con su resul
 
 ## III. ANÁLISIS Y EVALUACIÓN DE LOS RESULTADOS DE LAS PRUEBAS AUTOMATIZADAS
 
-*Esta sección presenta los resultados obtenidos tras la ejecución de los 29 escenarios: el registro de evidencias (177 screenshots, reportes JSON/HTML), la evaluación por módulo con análisis de cada resultado, las 5 oportunidades de mejora identificadas con estructura A+B+C, las métricas de calidad (PPT 3.3.1) y rendimiento, las 6 propuestas formales de mejora con impacto cuantificable, y las conclusiones generales e individuales del proceso.*
+*Esta sección presenta los resultados obtenidos tras la ejecución de los 29 escenarios: el registro de evidencias (93 screenshots, reportes JSON/HTML), la evaluación por módulo con análisis de cada resultado, las 5 oportunidades de mejora identificadas con estructura A+B+C, las métricas de calidad (PPT 3.3.1) y rendimiento, las 6 propuestas formales de mejora con impacto cuantificable, y las conclusiones generales e individuales del proceso.*
 
 ---
 
@@ -507,7 +507,7 @@ A continuación se presentan los 29 escenarios ejecutados, cada uno con su resul
 
 #### 1.4 Evidencias generadas
 
-- **177 screenshots** en `evidencias/` con formato `screenshot_AAAAMMDD_HHMMSS.png`
+- **93 screenshots** en `evidencias/` con formato `screenshot_AAAAMMDD_HHMMSS.png`
 - **Reporte HTML** (`reporte.html`) con tabla de resultados por feature y resumen final
 - **Reporte JSON** (`reporte.json`) con estructura completa: 10 features, 29 escenarios, duraciones
 
@@ -542,7 +542,7 @@ Los reportes generados contienen toda la información de la ejecución:
 }
 ```
 
-**177 screenshots** en `evidencias/` con formato `screenshot_AAAAMMDD_HHMMSS.png` — cada escenario genera múltiples capturas cronológicas, y el hook `@after_scenario` captura automáticamente el estado del navegador en caso de fallo (TC_004).
+**93 screenshots** en `evidencias/` con formato `screenshot_AAAAMMDD_HHMMSS.png` — cada escenario genera múltiples capturas cronológicas, y el hook `@after_scenario` captura automáticamente el estado del navegador en caso de fallo (TC_004).
 
 > 📸 **CAPTURA 3 — Reporte en navegador:** Abrir `reporte.html` en Chrome. Capturar pantalla del resumen final ("28 passed, 1 failed, 29 total") y la tabla de `login.feature` con TC_004 en rojo. Insertar imagen aquí.
 
@@ -643,7 +643,7 @@ Los reportes generados contienen toda la información de la ejecución:
 | Feature más lenta | Max(duración por feature) | **~40s** (PIM) | `reporte.json` |
 | Overhead de setup | (Total - suma steps) / Total | **~25%** | `environment.py:19` |
 | Cobertura Data-Driven | Escenarios DD / Total | **62%** (18/29) | Features con Scenario Outline |
-| Screenshots por escenario | Total screenshots / Escenarios | **6.1** (177/29) | `evidencias/` |
+| Screenshots por escenario | Total screenshots / Escenarios | **3.2** (93/29) | `evidencias/` |
 | Tasa de aprobación real | (PASS - intencional) / Total | **100%** | Excluyendo TC_004 |
 
 #### 4.3 Interpretación de métricas
@@ -741,7 +741,7 @@ Cada propuesta sigue la estructura: **Dato → Causa → Acción → Impacto**, 
 - **96.55% de aprobación** (100% excluyendo fallo intencional TC_004).
 - **Suite bilingüe:** soporta inglés y chino sin modificar features.
 - **Data-Driven funcional:** 18 escenarios parametrizados desde 6 archivos Excel.
-- **177 screenshots** de evidencia, con captura automática en fallos.
+- **93 screenshots** de evidencia, con captura automática en fallos.
 - **Métricas trazables** desde `reporte.json` y `reporte.html`.
 - **5 oportunidades de mejora** documentadas (3 implementadas, 2 propuestas).
 - **6 propuestas de mejora** (2 producto + 4 proceso) con impacto cuantificable.
