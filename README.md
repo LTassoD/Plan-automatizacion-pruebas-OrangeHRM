@@ -1,6 +1,35 @@
 # Automatización de Pruebas - OrangeHRM
 
-Proyecto de automatización de pruebas para el sitio **OrangeHRM** ([opensource-demo.orangehrmlive.com](https://opensource-demo.orangehrmlive.com/)) usando **Behave** + **Selenium WebDriver** + **Data-Driven Testing con Excel**.
+Suite de **pruebas funcionales automatizadas** (UI) para el sistema de RR.HH. OrangeHRM, escrita en **Python** con **Behave (BDD/Gherkin)** y **Selenium WebDriver**, usando **data-driven testing con Excel** y generación automática de **reportes y evidencias**.
+
+> Proyecto de portafolio de QA automation. Automatización de pruebas end-to-end con 10 features y 29 escenarios.
+
+## Highlights
+
+- **BDD con Gherkin**: 10 archivos `.feature` → 29 escenarios (login, navegación, gestión de empleados/PIM, búsqueda, edición, eliminación, perfil, licencias).
+- **Data-Driven Testing**: datos de prueba desde archivos Excel (`openpyxl`), 6 datasets con 3 filas cada uno.
+- **Reportes y evidencias**: reporte HTML auto-generado, screenshots por escenario (incluye captura en fallos), generación de Excel y documentación (Word/PPT) con scripts de Python.
+- **Ejecución flexible**: modo headless/visual, ejecución por feature o suite completa.
+- **Manejo de locales**: soporte para el sitio en inglés y chino.
+
+## Stack tecnológico
+
+| Capa | Tecnología |
+|------|-----------|
+| Framework | Behave (BDD), Python 3.14 |
+| Automatización UI | Selenium WebDriver |
+| Datos de prueba | Excel (openpyxl) |
+| Reportes | HTML + scripts Python (openpyxl, python-docx, python-pptx) |
+
+## Resultados de la suite
+
+| Indicador | Valor |
+|-----------|-------|
+| Total de escenarios | 29 |
+| Escenarios que pasan | 28 |
+| Fallo intencional (demostración) | 1 (captura de screenshot en error) |
+| Features | 10 |
+| Evidencias | ~1 screenshot por escenario en `evidencias/` |
 
 ## Requisitos
 
@@ -12,6 +41,7 @@ Proyecto de automatización de pruebas para el sitio **OrangeHRM** ([opensource-
 pip install behave selenium openpyxl
 ```
 
+## Estructura del Proyecto
 ## Estructura del Proyecto
 
 ```
@@ -119,3 +149,7 @@ Luego abrir `reporte.html` en el navegador.
 - Los datos de prueba estan en archivos Excel dentro de `testData/`.
 - Los screenshots se almacenan en `evidencias/` con timestamp.
 - El sitio demo se resetea cada 30 minutos, los datos creados pueden perderse.
+
+## Autor
+
+[Luis Tasso Delgado](https://github.com/LTassoD) — Proyecto de portafolio de automatización de pruebas (QA).
