@@ -150,6 +150,18 @@ Luego abrir `reporte.html` en el navegador.
 - Los screenshots se almacenan en `evidencias/` con timestamp.
 - El sitio demo se resetea cada 30 minutos, los datos creados pueden perderse.
 
+## Evidencias de ejecución
+
+Capturas tomadas automáticamente durante una corrida real de la suite (carpeta `evidencias/`, 93 archivos con timestamp):
+
+![Evidencia 1](evidencias/screenshot_20260629_201820.png)
+![Evidencia 2](evidencias/screenshot_20260629_203025.png)
+![Evidencia 3](evidencias/screenshot_20260629_204228.png)
+![Evidencia 4](evidencias/screenshot_20260629_204945.png)
+![Evidencia 5](evidencias/screenshot_20260629_205113.png)
+
+Cada escenario genera su screenshot automáticamente, incluso cuando falla.
+
 ## Autor
 
 [Luis Tasso Delgado](https://github.com/LTassoD) — Proyecto de portafolio de automatización de pruebas (QA).
